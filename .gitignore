@@ -1,0 +1,19 @@
+# Build output folders.
+/dist/
+/bin/
+
+# Mac OS X artifacts.
+.DS_Store
+
+# Emacs backup files.
+*~
+
+# Gradle
+.gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# NetworkTables libraries
+/networktables-input/lib
