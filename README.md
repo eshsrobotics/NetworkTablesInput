@@ -46,7 +46,7 @@ connection, this should result in a build artifact called
 
 3. Finally, if Gradle isn't working for whatever reason, you *can* run
   NetworkTablesInput by hand.  It's not easy, though:
-  
+
     1. Download a Gluon SDK build of OpenJFX from https://gluonhq.com/products/javafx.
     2. Unzip the build into some folder, like `%USERPROFILE%\Downloads`.
     3. `cd` into the directory where `networktablesinput.jar` is located and run
@@ -69,3 +69,6 @@ connection, this should result in a build artifact called
   JAR the same way FRC robots do: `./gradlew build`.
 - [x] Bring the batch file back to make this JAR easier to run.
   * The distribution created by `./gradlew build` includes a batch file.
+- [ ] Add a section to this README describing how to read the
+  NetworkTablesInput values from the robot code (as soon as we verify that
+  _this_ code works.)
