@@ -46,21 +46,22 @@ connection, this should result in a build artifact called
 
 3. Finally, if Gradle isn't working for whatever reason, you *can* run
   NetworkTablesInput by hand.  It's not easy, though:
-  1. Download a Gluon SDK build of OpenJFX from https://gluonhq.com/products/javafx.
-  2. Unzip the build into some folder, like `%USERPROFILE%\Downloads`.
-  3. `cd` into the directory where `networktablesinput.jar` is located and run
-  the following:
+  
+    1. Download a Gluon SDK build of OpenJFX from https://gluonhq.com/products/javafx.
+    2. Unzip the build into some folder, like `%USERPROFILE%\Downloads`.
+    3. `cd` into the directory where `networktablesinput.jar` is located and run
+    the following:
 
-  ``` shell
-  java -classpath "%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib/*;networktables-input.jar" \
-       --module-path="%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib" \
-       --add-modules=javafx.controls,javafx.fxml \
-       main.NetworkTablesInput
-  ```
+    ``` shell
+    java -classpath "%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib/*;networktables-input.jar" \
+         --module-path="%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib" \
+         --add-modules=javafx.controls,javafx.fxml \
+         main.NetworkTablesInput
+    ```
 
-  changing the version number for the JavaFX SDK as appropriate.
+    changing the version number for the JavaFX SDK as appropriate.
 
-  You're really better off sticking with Gradle.
+    You're really better off sticking with Gradle.
 
 ## TODO
 
