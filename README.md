@@ -53,7 +53,7 @@ connection, this should result in a build artifact called
     the following:
 
         ``` shell
-        java -classpath "%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib/*;networktables-input.jar" \
+        java -classpath "%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib/*;networktablesinput.jar" \
              --module-path="%USERPROFILE%/Downloads/javafx-sdk-11.0.2/lib" \
              --add-modules=javafx.controls,javafx.fxml \
              main.NetworkTablesInput
