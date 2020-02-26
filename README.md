@@ -32,6 +32,8 @@ connection, this should result in a build artifact called
 
 ## How to run
 
+This program must be run from the driver station -- usually a Windows laptop.
+
 1. To run NetworkTablesInput from the ZIP file, unzip it to any location, enter
   that folder, and run `bin/networktablesinput` (on Unix) or
   `bin/networktablesinput.bat` (on Windows) directly.
@@ -63,6 +65,90 @@ connection, this should result in a build artifact called
 
         You're really better off sticking with Gradle.
 
+## How to use
+
+- As NetworkTablesInput runs, keypresses and mouse clicks are captured in a
+  blank JavaFX window and passed into the
+  [edu.wpi.first.networktables.NetworkTable](https://first.wpi.edu/FRC/roborio/beta/docs/java/edu/wpi/first/networktables/NetworkTable.html)
+  table called `inputTable` **as long as the window has the focus.** Every entry
+  placed into the table is a boolean value indicating whether the key is
+  pressed.  The keys themselves are just members of the
+  [javafx.scene.input.KeyCode](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/input/KeyCode.html)
+  enumeration, converted to strings.  Examples include:
+
+    | Keyboard key  | NetworkTables key string |
+    | ------------- | ------------------------ |
+    | Alphanumeric  | Uppercase of the key (i.e. `A`, `B`, `C`, ... or `0`, `1`, `2`, ...) |
+    | Function keys | `F1`, `F2`, ... |
+    | Shift         | `Shift` |
+    | Control       | `Ctrl` |
+    | Alt           | `Alt` |
+    | Windows       | `Windows` |
+    | Enter         | `Enter` |
+    | Escape        | `Esc` |
+    | `-`           | `Minus` |
+    | `=`           | `Equals` |
+    | `[`           | `Open Bracket` |
+    | `]`           | `Close Bracket` |
+    | `/`           | `Slash` |
+    | `'`           | `Quote` |
+    | `;`           | `Semicolon` |
+    | Caps Lock     |  `Caps Lock` |
+    | `\``         | `Back Quote`|
+
+  Note that capturing the space bar is not possible because the drive station
+  interprets this as an **emergency stop**.
+
+- To use this code, you must initialize NetworkTables:
+
+    ``` java
+    import edu.wpi.first.networktables.NetworkTable;
+    import edu.wpi.first.networktables.NetworkTableEntry;
+    import edu.wpi.first.networktables.NetworkTableInstance;
+
+    // Initialization
+
+    NetworkTableInstance networkTableInstance = NetworkTableInstance.getDefault();
+    if (networkTableInstance.isConnected()) {
+      NetworkTable inputTable = networkTableInstance.getTable("inputTable");
+      if (this.inputTable != null) {
+        NetworkTableEntry upKey = inputTable.getEntry("Up")
+        NetworkTableEntry downKey = inputTable.getEntry("Down")
+        NetworkTableEntry leftKey = inputTable.getEntry("Left")
+        NetworkTableEntry rightKey = inputTable.getEntry("Right")
+        NetworkTableEntry zKey = inputTable.getEntry("Z")
+        NetworkTableEntry xKey = inputTable.getEntry("x")
+      }
+    }
+
+    ```
+
+- Then during your polling loop, you can do something like this:
+
+    ``` java
+    if (upKey.getBoolean(false)) {
+      // Drive robot forward
+    } else if (downKey.getBoolean(false)) {
+      // Drive robot backward
+    } else {
+      // Stop robot
+    }
+
+    if (leftKey.getBoolean(false)) {
+      // Turn robot counterclockwise
+    } else if (rightKey.getBoolean(false)) {
+      // Turn robot clockwise
+    }
+
+    if (zKey.getBoolean(false)) {
+      // Raise arm
+    } else if (xKey.getBoolean(false)) {
+      // Lower arm
+    } else {
+      // Stop arm motors
+    }
+    ```
+
 ## TODO
 
 - [x] Add a Gradle build script so that we can pull the latest NetworkTables
@@ -72,3 +158,5 @@ connection, this should result in a build artifact called
 - [ ] Add a section to this README describing how to read the
   NetworkTablesInput values from the robot code (as soon as we verify that
   _this_ code works.)
+- [ ] Don't hard-code the team number; make it -- or, rather, the IP address
+  that uses the team number -- configurable.
