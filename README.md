@@ -65,6 +65,15 @@ This program must be run from the driver station -- usually a Windows laptop.
 
         You're really better off sticking with Gradle.
 
+### Troubleshooting
+
+- _When I try to run, I get a `java.lang.UnsatisifedLinkError` in `ntcorejni.dll` that says "Can't find dependent libraries."_
+
+  This is a [common problem](https://www.chiefdelphi.com/t/cant-start-shuffleboard/370646/2), 
+  and it indicates that you need to install the latest
+  [Visual C++ redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe).  This seems to only be a problem
+  for people who use the offline WPILib installer. 
+
 ## How to use
 
 - As NetworkTablesInput runs, keypresses and mouse clicks are captured in a
