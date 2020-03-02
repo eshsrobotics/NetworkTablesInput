@@ -40,4 +40,6 @@ javafx {
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
+project.gradle.startParameter.excludedTaskNames.add('deploy')
+
 mainClassName = 'main.NetworkTablesInput'
