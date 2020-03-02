@@ -44,7 +44,7 @@ This program must be run from the driver station -- usually a Windows laptop.
     ./gradlew run
     ```
 
-  And the NetworkTablesInput program will be run in place.
+    And the NetworkTablesInput program will be run in place.
 
 3. Finally, if Gradle isn't working for whatever reason, you *can* run
   NetworkTablesInput by hand.  It's not easy, though:
@@ -103,7 +103,7 @@ This program must be run from the driver station -- usually a Windows laptop.
     | `'`           | `Quote` |
     | `;`           | `Semicolon` |
     | Caps Lock     |  `Caps Lock` |
-    | `\``         | `Back Quote`|
+    | `` ` ``       | `Back Quote`|
 
   Note that capturing the space bar is not possible because the drive station
   interprets this as an **emergency stop**.
@@ -164,7 +164,7 @@ This program must be run from the driver station -- usually a Windows laptop.
   JAR the same way FRC robots do: `./gradlew build`.
 - [x] Bring the batch file back to make this JAR easier to run.
   * The distribution created by `./gradlew build` includes a batch file.
-- [ ] Add a section to this README describing how to read the
+- [x] Add a section to this README describing how to read the
   NetworkTablesInput values from the robot code (as soon as we verify that
   _this_ code works.)
 - [ ] Don't hard-code the team number; make it -- or, rather, the IP address
