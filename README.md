@@ -16,7 +16,7 @@ This code has hard dependencies on NetworkTables and JavaFX.  Both must be
 present in the `$CLASSPATH` in order to build and to run, and JavaFX must
 _also_ be present in the `$MODULEPATH`.  The Gradle build normally takes care
 of all this, producing a "fat JAR" with all of the dependencies included
-insode it.
+within.
 
 ## How to build
 
