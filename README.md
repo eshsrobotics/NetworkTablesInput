@@ -69,10 +69,10 @@ This program must be run from the driver station -- usually a Windows laptop.
 
 - _When I try to run, I get a `java.lang.UnsatisifedLinkError` in `ntcorejni.dll` that says "Can't find dependent libraries."_
 
-  This is a [common problem](https://www.chiefdelphi.com/t/cant-start-shuffleboard/370646/2), 
+  This is a [common problem](https://www.chiefdelphi.com/t/cant-start-shuffleboard/370646/2),
   and it indicates that you need to install the latest
   [Visual C++ redistributable](https://aka.ms/vs/16/release/vc_redist.x64.exe).  This seems to only be a problem
-  for people who use the offline WPILib installer. 
+  for people who use the offline WPILib installer.
 
 ## How to use
 
@@ -87,7 +87,8 @@ This program must be run from the driver station -- usually a Windows laptop.
 
     | Keyboard key  | NetworkTables key string |
     | ------------- | ------------------------ |
-    | Alphanumeric  | Uppercase of the key (i.e. `A`, `B`, `C`, ... or `0`, `1`, `2`, ...) |
+    | Alphabetical  | Uppercase of the key (i.e. `A`, `B`, `C`, ...) |
+    | Numbers       | `DIGIT1`, `DIGIT2`, ... |
     | Function keys | `F1`, `F2`, ... |
     | Shift         | `Shift` |
     | Control       | `Ctrl` |
