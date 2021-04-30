@@ -38,13 +38,14 @@ This program must be run from the driver station -- usually a Windows laptop.
   that folder, and run `bin/networktablesinput` (on Unix) or
   `bin/networktablesinput.bat` (on Windows) directly.
 
-2. You can also execute:
+2. If you happen to have cloned this source tree onto the driver station
+   laptop, you can also enter that directory and execute:
 
     ``` shell
     ./gradlew run
     ```
 
-    And the NetworkTablesInput program will be run in place.
+    The NetworkTablesInput program will be executed in-place.
 
 3. Finally, if Gradle isn't working for whatever reason, you *can* run
   NetworkTablesInput by hand.  It's not easy, though:
@@ -89,6 +90,7 @@ This program must be run from the driver station -- usually a Windows laptop.
     | ------------- | ------------------------ |
     | Alphabetical  | Uppercase of the key (i.e. `A`, `B`, `C`, ...) |
     | Numbers       | `DIGIT1`, `DIGIT2`, ... |
+    | Mouse buttons | `Left Mouse`, `Right Mouse` |
     | Function keys | `F1`, `F2`, ... |
     | Shift         | `Shift` |
     | Control       | `Ctrl` |
@@ -98,13 +100,21 @@ This program must be run from the driver station -- usually a Windows laptop.
     | Escape        | `Esc` |
     | `-`           | `Minus` |
     | `=`           | `Equals` |
-    | `[`           | `Open Bracket` |
+    | `[`           | `Open_Bracket` |
     | `]`           | `Close Bracket` |
     | `/`           | `Slash` |
     | `'`           | `Quote` |
     | `;`           | `Semicolon` |
     | Caps Lock     |  `Caps Lock` |
     | `` ` ``       | `Back Quote`|
+    | Arrow keys    | `UP`, `RIGHT`, `DOWN`, `LEFT` |
+    | Numeric keypad arrows | `KP_UP`, `KP_RIGHT`, `KP_DOWN`, `KP_LEFT` |
+    | Numeric keypad digits | `NUMPAD0`, `NUMPAD1`, ..., `NUMPAD9` |
+    | Home | `HOME` |
+    | End | `END` |
+    | Page Up | `PAGE_UP` |
+    | Page Down | `PAGE_DOWN` |
+    |
 
   Note that capturing the space bar is not possible because the drive station
   interprets this as an **emergency stop**.
